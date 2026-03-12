@@ -91,19 +91,23 @@ Generates full analytical reports.
 ---
 
 # Architecture
+
+```
 User Interface
-↓
+      ↓
 Next.js Frontend
-↓
+      ↓
 FastAPI Backend
-↓
+      ↓
 AI Orchestrator
-↓
+      ↓
 Agent System
-↓
+      ↓
 DuckDB + Polars Analytics Engine
-↓
+      ↓
 Parquet Dataset Storage
+```
+
 ---
 
 # Technology Stack
@@ -147,19 +151,21 @@ Designed for high-performance analytics:
 ---
 
 # Project Structure
+
+```
 ai-analytics-platform/
 
 frontend/
-components/
-pages/
+  components/
+  pages/
 
 backend/
-api/
-agents/
-ai/
-database/
-services/
-models/
+  api/
+  agents/
+  ai/
+  database/
+  services/
+  models/
 
 datasets/
 models/
@@ -167,3 +173,142 @@ scripts/
 
 docker/
 k8s/
+
+README.md
+```
+
+---
+
+# Installation
+
+Clone the repository:
+
+```
+git clone https://github.com/your-username/ai-analytics-platform.git
+cd ai-analytics-platform
+```
+
+Install dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+Run the backend server:
+
+```
+uvicorn backend.main:app --reload
+```
+
+API documentation will be available at:
+
+```
+http://localhost:8000/docs
+```
+
+---
+
+# Example Query
+
+User input:
+
+```
+What is the total revenue by region?
+```
+
+Generated SQL:
+
+```
+SELECT region, SUM(revenue)
+FROM sales
+GROUP BY region;
+```
+
+Generated insight:
+
+Revenue is highest in North America, contributing the largest share of total sales.
+
+---
+
+# Dataset Exploration
+
+Users can run commands such as:
+
+```
+Explore this dataset and provide insights.
+```
+
+The AI will automatically:
+
+- Analyze dataset structure
+- Detect correlations
+- Detect anomalies
+- Generate charts
+- Produce a detailed report
+
+---
+
+# Security & Privacy
+
+Security is a core principle of the platform.
+
+- Datasets **never leave the system**
+- AI receives **schema metadata only**
+- Queries run in **sandbox environment**
+- Optional **local AI models using Ollama**
+
+---
+
+# Deployment
+
+The platform supports deployment via:
+
+- Docker
+- Kubernetes
+- Local machine
+- Cloud infrastructure
+
+Run using Docker:
+
+```
+docker-compose up
+```
+
+---
+
+# Future Improvements
+
+Planned features include:
+
+- Real-time streaming analytics
+- AI dashboard builder
+- Anomaly detection agents
+- Vector semantic search
+- Collaborative dashboards
+- Enterprise authentication
+
+---
+
+# Contributing
+
+Contributions are welcome.
+
+Steps:
+
+1. Fork the repository
+2. Create a feature branch
+3. Submit a pull request
+
+---
+
+# License
+
+MIT License
+
+---
+
+# Author
+
+Developed by **Divyanshu Goyal**
+
+AI Analytics Platform aims to provide a **next-generation AI-powered analytics system** that is fast, private, and scalable.
